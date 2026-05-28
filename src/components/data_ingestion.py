@@ -56,6 +56,8 @@ class DataIngestion:
         logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
 
         try:
+            if len(dataframe) == 0:
+                raise ValueError("DataFrame is empty. No data available to split.")
             train_set, test_set = train_test_split(dataframe, test_size=self.data_ingestion_config.train_test_split_ratio)
             logging.info("Performed train test split on the dataframe")
             logging.info(
@@ -96,7 +98,7 @@ class DataIngestion:
             )
 
             data_ingestion_artifact = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
-            test_file_path=self.data_ingestion_config.testing_file_path)
+             test_file_path=self.data_ingestion_config.testing_file_path)
             
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
             return data_ingestion_artifact

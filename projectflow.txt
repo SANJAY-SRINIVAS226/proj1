@@ -1,0 +1,20 @@
+create project template by executing template.py file 
+write the code on setup.py and pyproject.toml file to import local packages
+ >> find more about "setup.py and pyprojec.toml" as crashcourse.txt
+ create a virtual env, activate it and install the requirements from reuqirements.txt
+    >> conda create -n proj1 python=3.10 -y
+    >> conda activate proj1
+    >> add required modules to requirements.txt
+    >> do "pip install -r requirements.txt"
+    do a "pip list" on terminal to make sure you have local packages installed.
+
+
+    before running demo.py , do this :
+   >>>>$env:MONGODB_URL = "mongodb+srv://<username>:<password>"
+
+
+check: echo $env:MONGODB_URL
+
+to setup the connection url on windows , open env variable setting option and add a new variable :
+NAME: MONGODB_URL, Value=<url>
+also add "artifact" dir to .gitignore file  

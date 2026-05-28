@@ -2,8 +2,8 @@ import os
 from datetime import date
 
 # For MongoDB connection
-DATABASE_NAME = "Proj1"
-COLLECTION_NAME = "Proj1-Data"
+DATABASE_NAME = "vehicle-insurance-project1"
+COLLECTION_NAME = "proj1-vehicle-insurance"
 MONGODB_URL_KEY = "MONGODB_URL"
 
 PIPELINE_NAME: str = ""
@@ -29,7 +29,7 @@ REGION_NAME = "us-east-1"
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
 """
-DATA_INGESTION_COLLECTION_NAME: str = "Proj1-Data"
+DATA_INGESTION_COLLECTION_NAME: str = "proj1-vehicle-insurance"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 DATA_INGESTION_INGESTED_DIR: str = "ingested"
@@ -67,7 +67,7 @@ MIN_SAMPLES_SPLIT_RANDOM_STATE: int = 101
 MODEL Evaluation related constants
 """
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
+MODEL_BUCKET_NAME = "mymodel-mlops-proj"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 
