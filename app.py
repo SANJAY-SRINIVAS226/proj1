@@ -79,7 +79,10 @@ async def index(request: Request):
     Renders the main HTML form page for vehicle data input.
     """
     return templates.TemplateResponse(
-            "vehicledata.html",{"request": request, "context": "Rendering"})
+        request=request,  # Explicitly defined request keyword argument
+        name="vehicledata.html",
+        context={"context": "Rendering"}
+    )
 
 # Route to trigger the model training process
 @app.get("/train")
@@ -122,19 +125,24 @@ async def predictRouteClient(request: Request):
         # Convert form data into a DataFrame for the model
         vehicle_df = vehicle_data.get_vehicle_input_data_frame()
 
+        # FIX: Add the missing 'id' column expected by the preprocessor
+        vehicle_df['id'] = 0  # Adds a dummy ID column filled with zeros
+
+
         # Initialize the prediction pipeline
         model_predictor = VehicleDataClassifier()
 
         # Make a prediction and retrieve the result
-        value = model_predictor.predict(dataframe=vehicle_df)[0]
+        value = model_predictor.predict(dataframe=vehicle_df)
 
         # Interpret the prediction result as 'Response-Yes' or 'Response-No'
         status = "Response-Yes" if value == 1 else "Response-No"
 
         # Render the same HTML page with the prediction result
         return templates.TemplateResponse(
-            "vehicledata.html",
-            {"request": request, "context": status},
+            request=request,  # Explicitly defined request keyword argument
+            name="vehicledata.html",
+            context={"context": status}
         )
         
     except Exception as e:

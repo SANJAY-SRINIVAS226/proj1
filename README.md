@@ -76,8 +76,8 @@ vehicle-insurance-mlops/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/vehicle-insurance-mlops.git
-cd vehicle-insurance-mlops
+git clone https://github.com/SANJAY-SRINIVAS226/proj1.git
+cd proj1
 ```
 
 ### 2. Create & Activate Virtual Environment
