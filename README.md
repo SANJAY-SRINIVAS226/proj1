@@ -228,7 +228,7 @@ docker build -t vehicleproj .
 ### Run Container
 
 ```bash
-docker run -p 5080:5080 \
+docker run -p 5000:5000 \
   -e MONGODB_URL=$MONGODB_URL \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
