@@ -1,5 +1,5 @@
 # Upgrade to bullseye to fix the broken Debian buster apt-get repositories
-FROM python:3.10-slim-bullseye
+FROM python:3.11-slim-bullseye
 
 # Set the working directory
 WORKDIR /app
